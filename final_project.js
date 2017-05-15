@@ -1,6 +1,91 @@
 var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
+function checkAnswers(){
+  
+  var  quizScore = 0
+
+  var questionOneAnswer  = document.querySelector("input[name='problem1']:checked").value;
+  if(questionOneAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore
+  }
+
+  var questionTwoAnswer = document.querySelector("input[name='problem2']:checked").value
+  if(questionTwoAnswer == "2"){
+     quizScore = quizScore + 1;
+   } else  {
+     quizScore = quizScore;
+   }
+
+  var questionThreeAnswer = document.querySelector("input[name='problem3']:checked").value
+  if(questionThreeAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionFourAnswer = document.querySelector("input[name='problem4']:checked").value
+  if(questionFourAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionFiveAnswer = document.querySelector("input[name='problem5']:checked").value
+  if(questionFiveAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionSixAnswer = document.querySelector("input[name='problem6']:checked").value
+  if(questionSixAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionSevenAnswer = document.querySelector("input[name='problem7']:checked").value
+  if(questionSevenAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionEightAnswer = document.querySelector("input[name='problem8']:checked").value
+  if(questionEightAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionNineAnswer = document.querySelector("input[name='problem9']:checked").value
+  if(questionNineAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  var questionTenAnswer = document.querySelector("input[name='problem10']:checked").value
+  if(questionTenAnswer == "2"){
+    quizScore = quizScore + 1;
+  } else {
+    quizScore = quizScore;
+  }
+
+  alert(quizScore)
+}
+
+
+
+
+
+
+
+
+
 
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
@@ -70,7 +155,7 @@ function setY(shape, y) {
     var yDiff = parseFloat(shape.getAttribute("y2")) - parseFloat(shape.getAttribute("y1"))
     shape.setAttribute("y1", y)
     shape.setAttribute("y2", y + yDiff)
-  } 
+  }
 }
 
 function move(shape, dx, dy) {
@@ -108,7 +193,7 @@ function makeCircle(cx, cy, r, fill, opacity) {
   circle.setAttribute("r", r)
   circle.setAttribute("fill", fill)
   circle.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(circle)
   return circle
@@ -122,7 +207,7 @@ function makeRect(x, y, width, height, fill, opacity) {
   rect.setAttribute("height", height)
   rect.setAttribute("fill", fill)
   rect.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(rect)
   return rect
@@ -136,7 +221,7 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("ry", ry)
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(ellipse)
   return ellipse
@@ -151,7 +236,7 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke", stroke)
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(line)
   return line
@@ -164,7 +249,7 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("stroke-width", strokeWidth)
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polyline)
   return polyline
@@ -175,7 +260,7 @@ function makePolygon(points, fill, opacity) {
   polygon.setAttribute("points", points)
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polygon)
   return polygon
@@ -190,7 +275,7 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("font-family", fontFamily)
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(text)
   return text
@@ -204,7 +289,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("width", width)
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(image)
   return image
@@ -221,7 +306,7 @@ function collides(shape1, shape2) {
   } else {
     throw "Oops, that kind of shape isn't supported by the collide function!"
   }
-  
+
   var xMin, xMax, yMin, yMax
   if (shape2.hasAttribute("x")) {
     xMin = getX(shape2)
@@ -246,7 +331,7 @@ function collides(shape1, shape2) {
   } else {
     throw "Oops, that kind of shape isn't supported by the collide function!"
   }
-  return (centerX > xMin && 
+  return (centerX > xMin &&
           centerX < xMax &&
          centerY > yMin &&
          centerY < yMax)
